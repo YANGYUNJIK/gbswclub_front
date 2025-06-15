@@ -3,7 +3,7 @@ import PortfolioStats from '../components/PortfolioStats.jsx';
 import FilterSection from '../components/FilterSection.jsx';
 import PortfolioBox from '../components/PortfolioBox.jsx';
 import './styles/Portfolio.css';
-import { PortfolioData } from '../data/PortfolioData';
+import PortfolioData from '../data/PortfolioData.jsx';
 
 
 const Portfolio = () => {

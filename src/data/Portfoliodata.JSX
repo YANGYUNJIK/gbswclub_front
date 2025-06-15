@@ -242,4 +242,4 @@ const PortfolioData = [
         email: 'Email@.com'
     }
 ];
-export { PortfolioData };
+export default PortfolioData;
