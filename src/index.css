@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css 또는 tailwind.css 등 공통 스타일 파일 */
+html, body {
+  overflow-x: hidden; /* ✅ 수평 스크롤 제거 */
+  overscroll-behavior-y: none; /* ✅ 위로 당겨도 bounce 안 됨 */
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}

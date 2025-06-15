@@ -1,0 +1,114 @@
+.clubs-container {
+  max-width: 1080px;
+  margin: 20px auto;
+  padding-top: 80px;
+}
+
+.filter-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-section {
+  position: relative;
+}
+
+.filter-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  border-color: #4CA688;
+  color: #4CA688;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px #efe9ff;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.toggle-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toggle-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.dropdown-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dropdown-group select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-group select:hover,
+.dropdown-group select:focus {
+  border-color: #9BDAC8;
+  outline: none;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid #9BDAC8;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  background-color: #9BDAC8;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #4CA688;
+}
