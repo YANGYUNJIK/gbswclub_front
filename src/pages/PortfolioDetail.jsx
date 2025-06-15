@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import './styles/PortfolioDetail.css';
-import { PortfolioData } from '../data/PortfolioData.jsx';
+import PortfolioData from '../data/PortfolioData.jsx';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
