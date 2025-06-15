@@ -1,67 +1,9 @@
-// import React, { useEffect, useState } from "react";
-
-// const videos = ["/gbsw_video1.mp4", "/gbsw_video2.mp4", "/gbsw_video3.mp4"];
-
-// export default function HeroVideoSection() {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [fade, setFade] = useState(true);
-
-//   // 영상 전환 시 fade-out → fade-in 효과 적용
-//   useEffect(() => {
-//     setFade(false); // 먼저 투명하게 만들고
-//     const timeout = setTimeout(() => setFade(true), 100); // 다시 보이게
-
-//     return () => clearTimeout(timeout);
-//   }, [currentIndex]);
-
-//   return (
-//     <section className="relative h-screen overflow-hidden">
-//       {/* 🎥 영상 */}
-//       <video
-//         key={currentIndex}
-//         className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-//           fade ? "opacity-100" : "opacity-0"
-//         }`}
-//         autoPlay
-//         muted
-//         loop
-//         playsInline
-//       >
-//         <source src={videos[currentIndex]} type="video/mp4" />
-//         브라우저가 video 태그를 지원하지 않습니다.
-//       </video>
-
-//       {/* 텍스트 오버레이
-//       <div className="relative z-10 flex flex-col justify-center items-center text-white text-center h-full bg-black/20">
-//         <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-//           Hello GBSW에 오신 걸 환영합니다
-//         </h1>
-//         <p className="text-lg md:text-xl mb-6 drop-shadow">
-//           경북소프트웨어마이스터고의 열정과 비전을 느껴보세요
-//         </p>
-//       </div> /*}
-
-//       {/* ⬤ dot 네비게이션 (우측 하단) */}
-//       <div className="absolute bottom-4 right-6 z-20 flex gap-2">
-//         {videos.map((_, idx) => (
-//           <button
-//             key={idx}
-//             onClick={() => setCurrentIndex(idx)}
-//             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-//               idx === currentIndex ? "bg-white scale-125" : "bg-gray-400"
-//             }`}
-//           ></button>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
 import { useEffect, useState } from 'react';
 
-const videos = ["/gbsw_video2.mp4", "/gbsw_video1.mp4", "/gbsw_video3.mp4"];
+const youtubeIds = [
+  "cygyGLzY2vg", // 영상 1
+  "fXxzm0MTk",   // 영상 2
+];
 
 export default function HeroVideoSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,30 +21,21 @@ export default function HeroVideoSection() {
       className="fixed top-0 left-0 w-screen h-screen overflow-hidden z-0"
       style={{ inset: 0 }}
     >
-      {/* 🎥 비디오 자체 */}
-      <video
+      {/* 🎥 YouTube iframe */}
+      <iframe
         key={currentIndex}
-        className={`w-full h-full object-cover transition-opacity duration-1000 ${
+        className={`w-full h-full transition-opacity duration-1000 object-cover ${
           fade ? 'opacity-100' : 'opacity-0'
         }`}
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src={videos[currentIndex]} type="video/mp4" />
-        브라우저가 video 태그를 지원하지 않습니다.
-      </video>
-
-      {/* 텍스트 오버레이 */}
-      {/* <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center bg-black/30 z-10">
-        <h1 className="text-4xl font-bold mb-4">경북소프트웨어마이스터고</h1>
-        <p className="text-xl">비전을 향해 도전하세요!</p>
-      </div> */}
+        src={`https://www.youtube.com/embed/${youtubeIds[currentIndex]}?autoplay=1&mute=1&loop=1&playlist=${youtubeIds[currentIndex]}`}
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
 
       {/* dot 네비게이션 */}
       <div className="absolute bottom-4 right-6 z-20 flex gap-2">
-        {videos.map((_, idx) => (
+        {youtubeIds.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
@@ -115,3 +48,11 @@ export default function HeroVideoSection() {
     </section>
   );
 }
+
+
+
+{/* 텍스트 오버레이 */ }
+{/* <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center bg-black/30 z-10">
+        <h1 className="text-4xl font-bold mb-4">경북소프트웨어마이스터고</h1>
+        <p className="text-xl">비전을 향해 도전하세요!</p>
+      </div> */}
