@@ -1,4 +1,4 @@
-const Portfoliodata = [
+const PortfolioData = [
     {
         id: 1,
         name: '박건형',
@@ -242,4 +242,4 @@ const Portfoliodata = [
         email: 'Email@.com'
     }
 ];
-export { Portfoliodata };
+export { PortfolioData };

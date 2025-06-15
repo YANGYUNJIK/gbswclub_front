@@ -3,7 +3,7 @@ import PortfolioStats from '../components/PortfolioStats.jsx';
 import FilterSection from '../components/FilterSection.jsx';
 import PortfolioBox from '../components/PortfolioBox.jsx';
 import './styles/Portfolio.css';
-import { Portfoliodata } from '../data/Portfoliodata'; 
+import { PortfolioData } from '../data/PortfolioData';
 
 
 const Portfolio = () => {
@@ -13,7 +13,7 @@ const Portfolio = () => {
         <PortfolioStats />
         <FilterSection />
         <div className="portfolio-list">
-          {Portfoliodata.map((item, index) => (
+          {PortfolioData.map((item, index) => (
             <PortfolioBox key={index} data={item} />
           ))}
         </div>

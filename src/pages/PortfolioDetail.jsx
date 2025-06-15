@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import './styles/PortfolioDetail.css';
-import { Portfoliodata } from '../data/Portfoliodata';
+import { PortfolioData } from '../data/PortfolioData.jsx';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const PortfolioDetail = () => {
     const { id } = useParams();
-    const portfolio = Portfoliodata.find((item) => item.id === parseInt(id));
+    const portfolio = PortfolioData.find((item) => item.id === parseInt(id));
 
     if (!portfolio) {
         return <div className="portfolio-detail">해당 포트폴리오를 찾을 수 없습니다.</div>;
