@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
 const youtubeIds = [
-  "cygyGLzY2vg", // 영상 1
-  "fXxzm0MTk",   // 영상 2
+  "cygyGLzY2vg",
+  "fXxzm0MTk", // 예시
 ];
 
 export default function HeroVideoSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    setFade(false);
-    const timeout = setTimeout(() => setFade(true), 100);
-    return () => clearTimeout(timeout);
-  }, [currentIndex]);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % youtubeIds.length);
+    }, 10000); // 10초마다 전환
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
@@ -21,17 +21,14 @@ export default function HeroVideoSection() {
       className="fixed top-0 left-0 w-screen h-screen overflow-hidden z-0"
       style={{ inset: 0 }}
     >
-      {/* 🎥 YouTube iframe */}
       <iframe
-        key={currentIndex}
-        className={`w-full h-full transition-opacity duration-1000 object-cover ${
-          fade ? 'opacity-100' : 'opacity-0'
-        }`}
-        src={`https://www.youtube.com/embed/${youtubeIds[currentIndex]}?autoplay=1&mute=1&loop=1&playlist=${youtubeIds[currentIndex]}`}
-        title="YouTube video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        src={`https://www.youtube.com/embed/${youtubeIds[currentIndex]}?autoplay=1&mute=1&modestbranding=1&rel=0&loop=1&playlist=${youtubeIds[currentIndex]}`}
+        title="YouTube Video"
+        frameBorder="0"
+        allow="autoplay; encrypted-media; fullscreen"
         allowFullScreen
-      />
+        className="absolute w-full h-full top-0 left-0 object-cover pointer-events-none z-[-1]"
+      ></iframe>
 
       {/* dot 네비게이션 */}
       <div className="absolute bottom-4 right-6 z-20 flex gap-2">
@@ -39,15 +36,15 @@ export default function HeroVideoSection() {
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
+              }`}
           ></button>
         ))}
       </div>
     </section>
   );
 }
+
 
 
 

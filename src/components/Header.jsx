@@ -102,7 +102,7 @@ export default function Header() {
 
           </div>
 
-          {/* 우측: 로그인 버튼 */}
+          {/* 우측: 로그인 버튼
           <div className="flex items-center space-x-3">
             <Link
               to="/login"
@@ -114,7 +114,7 @@ export default function Header() {
             >
               로그인
             </Link>
-          </div>
+          </div> */}
         </div>
       </header>
 
