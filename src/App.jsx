@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HeroVideoSection from './components/HeroVideoSection';
@@ -9,24 +10,26 @@ import Clubs from './pages/Clubs';
 import ClubDetail from './pages/ClubDetail';
 import Portfolio from './pages/Portfolio';
 import PortfolioDetail from './pages/PortfolioDetail';
-import Header1 from './components/Header1';  // 투명 헤더
+import Header1 from './components/Header1';
 
 function App() {
+  const [videoIndex, setVideoIndex] = useState(0); // ✅ 현재 영상 index
+
   return (
     <Router>
       <Routes>
-        {/* ✅ / 전용: Header1 + 영상만 */}
+        {/* ✅ "/" 경로는 Hero 영상 + 조건부 Header */}
         <Route
           path="/"
           element={
             <>
-              <Header1 />
-              <HeroVideoSection />
+              {videoIndex !== 1 && <Header1 videoIndex={videoIndex} />} {/* 조건부 렌더링 */}
+              <HeroVideoSection setVideoIndex={setVideoIndex} />
             </>
           }
         />
 
-        {/* ✅ 그 외 전체는 공통 레이아웃(Layout) */}
+        {/* ✅ 공통 Layout 경로들 */}
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
