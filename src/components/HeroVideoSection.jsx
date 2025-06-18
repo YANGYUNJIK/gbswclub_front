@@ -100,13 +100,20 @@ export default function HeroVideoSection({ setVideoIndex }) {
   return (
     <section
       id="hero-video"
-      className="fixed top-0 left-0 w-[100vw] h-[100dvh] overflow-hidden z-0"
+      className="fixed top-0 left-0 w-full h-full overflow-hidden z-0"
+      style={{
+        height: '100dvh',
+        width: '100vw',
+        paddingTop: 0,
+        marginTop: 0,
+      }}
     >
       <video
         ref={videoRef}
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          fade ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`w-full h-full transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}
+        style={{
+          objectFit: 'fill', // 👈 object-cover로 잘리는 걸 방지
+        }}
         autoPlay
         muted
         loop
@@ -116,7 +123,7 @@ export default function HeroVideoSection({ setVideoIndex }) {
         브라우저가 video 태그를 지원하지 않습니다.
       </video>
 
-      {/* 🔽 스크롤 유도 마우스 + 텍스트 */}
+      {/* 유도 텍스트 및 점 네비게이션은 그대로 유지 */}
       <div className="absolute bottom-8 right-5 z-20 flex flex-col items-center text-white animate-bounce opacity-80">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center items-start p-1">
           <div className="w-1 h-2 bg-white rounded-full animate-ping" />
@@ -125,7 +132,6 @@ export default function HeroVideoSection({ setVideoIndex }) {
         <span className="text-xl animate-bounce">↓</span>
       </div>
 
-      {/* dot 네비게이션 */}
       <div className="absolute bottom-4 right-6 z-20 flex gap-2">
         {videos.map((_, idx) => (
           <button
@@ -140,3 +146,4 @@ export default function HeroVideoSection({ setVideoIndex }) {
     </section>
   );
 }
+
