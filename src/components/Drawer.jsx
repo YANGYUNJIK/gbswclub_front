@@ -32,9 +32,6 @@ export default function Drawer({ isOpen, onClose }) {
           <Link to="/stats" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
             📊 <span className="text-base">통계</span>
           </Link>
-          <Link to="/Home" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
-            ㅁ <span className="text-base">로그아웃</span>
-          </Link>
 
           <hr className="my-4 border-gray-300" />
 

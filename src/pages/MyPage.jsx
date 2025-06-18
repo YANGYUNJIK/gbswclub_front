@@ -9,7 +9,7 @@ export default function MyPage() {
     const role = localStorage.getItem('userRole');
     if (role !== 'student') {
       alert("학생만 접근할 수 있습니다.");
-      navigate('/login');
+      navigate('/Home');
     }
   }, []);
 

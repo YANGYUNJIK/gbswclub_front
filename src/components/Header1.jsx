@@ -30,8 +30,8 @@ export default function Header1() {
               GBSW
             </Link>
 
-            <Link to="/Login" className="text-xl font-bold">
-              로그인
+            <Link to="/Home" className="text-xl font-bold">
+              들어가기
             </Link>
           </div>
 
@@ -42,3 +42,4 @@ export default function Header1() {
     </>
   );
 }
+
