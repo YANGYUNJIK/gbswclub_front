@@ -45,7 +45,7 @@ export default function HeroVideoSection({ setVideoIndex }) {
       </video>
 
       {/* 🔽 스크롤 유도 마우스 + 텍스트 */}
-      <div className="absolute bottom-5 right-6 z-20 flex flex-col items-center text-white animate-bounce opacity-80">
+      <div className="absolute bottom-5 right-5 z-20 flex flex-col items-center text-white animate-bounce opacity-80">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center items-start p-1">
           <div className="w-1 h-2 bg-white rounded-full animate-ping" />
         </div>
