@@ -32,9 +32,8 @@ export default function HeroVideoSection({ setVideoIndex }) {
     >
       <video
         ref={videoRef}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          fade ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'
+          }`}
         style={{ objectPosition: 'center center' }}
         autoPlay
         muted
@@ -45,15 +44,25 @@ export default function HeroVideoSection({ setVideoIndex }) {
         브라우저가 video 태그를 지원하지 않습니다.
       </video>
 
+      {/* 🔽 스크롤 유도 마우스 + 텍스트 */}
+      <div className="absolute bottom-5 right-6 z-20 flex flex-col items-center text-white animate-bounce opacity-80">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center items-start p-1">
+          <div className="w-1 h-2 bg-white rounded-full animate-ping" />
+        </div>
+         {/* 텍스트 */}
+        <span className="mt-2 text-sm tracking-widest">click</span>
+        {/* 아래 화살표 */}
+        <span className="text-xl animate-bounce">↓</span>
+      </div>
+
       {/* dot 네비게이션 */}
       <div className="absolute bottom-4 right-6 z-20 flex gap-2">
         {videos.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
+              }`}
           ></button>
         ))}
       </div>
