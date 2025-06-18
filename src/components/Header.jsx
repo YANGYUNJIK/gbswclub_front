@@ -113,7 +113,9 @@ export default function Header() {
       localStorage.removeItem('userRole');
       localStorage.removeItem('userName');
       setIsLoggedIn(false);
-      navigate('/');
+      alert("로그아웃 되었습니다!");
+      navigate("/home");
+      return;
     } else {
       // 로그인 페이지로 이동
       navigate('/login');
