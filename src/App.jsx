@@ -29,6 +29,7 @@ function App() {
           }
         />
 
+
         {/* ✅ 공통 Layout 경로들 */}
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />

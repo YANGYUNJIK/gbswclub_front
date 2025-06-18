@@ -3,12 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* index.css 또는 tailwind.css 등 공통 스타일 파일 */
-html, body {
-  overflow-x: hidden; /* ✅ 수평 스크롤 제거 */
-  overscroll-behavior-y: none; /* ✅ 위로 당겨도 bounce 안 됨 */
-  scroll-behavior: smooth;
+/* 공통 설정 */
+html, body, #root {
   margin: 0;
   padding: 0;
-  height: 100dvh;
+  height: 100%;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }

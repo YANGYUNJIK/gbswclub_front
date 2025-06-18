@@ -17,6 +17,9 @@ export default function Drawer({ isOpen, onClose }) {
       >
         <div className="pt-20 px-4 space-y-1.5"> {/* ⬅️ pt-20: 헤더 높이만큼 아래로 */}
           {/* 주요 메뉴 */}
+          <Link to="/Home" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
+            ㅁ <span className="text-base">메인 페이지</span>
+          </Link>
           <Link to="/clubs" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
             🏠 <span className="text-base">전공 동아리</span>
           </Link>
@@ -28,6 +31,9 @@ export default function Drawer({ isOpen, onClose }) {
           </Link>
           <Link to="/stats" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
             📊 <span className="text-base">통계</span>
+          </Link>
+          <Link to="/Home" onClick={onClose} className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100">
+            ㅁ <span className="text-base">로그아웃</span>
           </Link>
 
           <hr className="my-4 border-gray-300" />

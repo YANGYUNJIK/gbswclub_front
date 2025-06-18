@@ -59,20 +59,6 @@ export default function Header() {
             </Link>
 
           </div>
-
-          {/* 우측: 로그인 버튼
-          <div className="flex items-center space-x-3">
-            <Link
-              to="/login"
-              className={`px-4 py-2 rounded text-sm font-semibold transition ${
-                isHome && !isScrolled
-                  ? 'bg-white text-blue-600 hover:bg-gray-100'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
-              }`}
-            >
-              로그인
-            </Link>
-          </div> */}
         </div>
       </header>
 
