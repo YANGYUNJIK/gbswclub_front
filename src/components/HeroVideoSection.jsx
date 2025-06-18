@@ -28,7 +28,8 @@ export default function HeroVideoSection({ setVideoIndex }) {
   return (
     <section
       id="hero-video"
-      className="fixed inset-0 w-screen h-screen overflow-hidden z-10" style={{height: '100dvh'}}
+      // className="fixed inset-0 w-screen h-screen overflow-hidden z-10" style={{height: '100dvh'}}
+      className="fixed top-0 left-0 w-[100vw] h-[100dvh] overflow-hidden z-10"
     >
       <video
         ref={videoRef}
