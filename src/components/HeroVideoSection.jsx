@@ -100,7 +100,7 @@ export default function HeroVideoSection({ setVideoIndex }) {
   return (
     <section
       id="hero-video"
-      className="fixed top-0 left-0 w-full h-full overflow-hidden z-0"
+      className="fixed top-0 left-0 w-[100vw] h-[100dvh] overflow-hidden z-0"
       style={{
         height: '100dvh',
         width: '100vw',
@@ -110,7 +110,7 @@ export default function HeroVideoSection({ setVideoIndex }) {
     >
       <video
         ref={videoRef}
-        className={`w-full h-full transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}
+        className="w-full h-full object-fill"
         style={{
           objectFit: 'fill', // 👈 object-cover로 잘리는 걸 방지
         }}
